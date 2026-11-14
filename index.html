@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>حفل زفاف راكان & لين</title>
+
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- خطوط عربية ملكية وإنجليزية كلاسيكية متناسقة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* استدعاء الخط المحلي باسم 5 مع تراجع تلقائي لخط Amiri في حال عدم وجود الملف */
+    @font-face {
+      font-family: 'CustomNamesFont5';
+      src: url('5.woff2') format('woff2'),
+           url('5.ttf') format('truetype'),
+           url('5.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      /* باليت مستوحى مباشرة من الصورة الرملية الدافئة */
+      --bg-warm-cream: #f8f2ea;
+      --bg-sand: #eadbc8;
+      --card-glass: rgba(255, 251, 246, 0.89);
+      
+      --espresso-ink: #3a2b1e;
+      --taupe-soft: #735c47;
+      --honey-gold: #b0844e;
+      --honey-deep: #7a5429;
+      --glow-ivory: #fff6e8;
+      --gold-border: rgba(176, 132, 78, 0.3);
+
+      --font-names: 'CustomNamesFont5', 'Amiri', serif;
+      --font-serif-ar: 'Amiri', serif;
+      --font-sans-ar: 'IBM Plex Sans Arabic', sans-serif;
+      --font-en: 'Cinzel', serif;
+      --font-en-italic: 'Cormorant Garamond', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background-color: var(--bg-sand);
+      display: flex;
+      justify-content: center;
+      font-family: var(--font-sans-ar);
+      font-weight: 400;
+      color: var(--espresso-ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .mobile-frame {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(180deg, #faf5ee 0%, #f1e5d6 55%, #e6d5c0 100%);
+      box-shadow: 0 0 60px rgba(58, 43, 30, 0.16);
+    }
+
+    /* خلفية متناغمة للأقسام السفلية */
+    .luxury-canvas {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      background-image: 
+        linear-gradient(180deg, rgba(250, 245, 238, 0.88) 0%, rgba(243, 233, 220, 0.86) 50%, rgba(235, 221, 203, 0.92) 100%),
+        url('خلفيه تصاميم Ai.jpg'),
+        url('1.jpg');
+      background-repeat: repeat;
+      background-position: center center;
+      background-size: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #shimmer-canvas {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .auto-scroll-pill {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 900;
+      background: rgba(255, 251, 246, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--gold-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-family: var(--font-sans-ar);
+      font-size: 0.78rem;
+      color: var(--espresso-ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(58, 43, 30, 0.1);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .auto-scroll-pill i {
+      color: var(--honey-gold);
+    }
+
+    .auto-scroll-pill.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* =========================================================
+       شاشة الستارة والختم العاجي الدافئ (بدون كلمة OPEN)
+       ========================================================= */
+    #curtain-screen {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #curtain-screen.opened {
+      pointer-events: none;
+    }
+
+    .curtain-panel {
+      position: absolute;
+      top: 0;
+      width: 50.5%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(196, 170, 141, 0.78) 0%, rgba(168, 140, 110, 0.82) 50%, rgba(133, 108, 82, 0.86) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 1;
+      transition: transform 1.35s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .curtain-left {
+      left: 0;
+      border-right: 1px solid rgba(255, 246, 232, 0.4);
+      box-shadow: inset -8px 0 20px rgba(58, 43, 30, 0.12);
+    }
+
+    .curtain-right {
+      right: 0;
+      border-left: 1px solid rgba(255, 246, 232, 0.4);
+      box-shadow: inset 8px 0 20px rgba(58, 43, 30, 0.12);
+    }
+
+    #curtain-screen.opened .curtain-left { transform: translateX(-100%); }
+    #curtain-screen.opened .curtain-right { transform: translateX(100%); }
+
+    .seal-center-btn {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: opacity 0.5s ease, transform 0.6s ease;
+    }
+
+    #curtain-screen.opened .seal-center-btn {
+      opacity: 0;
+      transform: scale(1.15);
+    }
+
+    .seal-aura-halo {
+      position: absolute;
+      top: -14px;
+      left: -14px;
+      right: -14px;
+      bottom: 36px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 246, 232, 0.55) 0%, rgba(235, 214, 185, 0.2) 55%, transparent 75%);
+      animation: auraGlow 3s infinite alternate ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes auraGlow {
+      0% { transform: scale(0.92); opacity: 0.6; }
+      100% { transform: scale(1.14); opacity: 0.98; }
+    }
+
+    .exact-ivory-seal {
+      width: 146px;
+      height: 146px;
+      border-radius: 50%;
+      background: #fdf9f3;
+      box-shadow: 
+        0 14px 36px rgba(58, 43, 30, 0.26), 
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 0 26px rgba(255, 246, 232, 0.55),
+        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10px;
+      border: 1.5px solid rgba(176, 132, 78, 0.48);
+      position: relative;
+      animation: sealFloat 4s infinite ease-in-out;
+    }
+
+    .exact-ivory-seal::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1px solid rgba(176, 132, 78, 0.22);
+      pointer-events: none;
+    }
+
+    @keyframes sealFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .seal-branches-exact {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--honey-gold);
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+      opacity: 0.88;
+    }
+
+    .seal-center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .seal-couple-title {
+      font-family: var(--font-names);
+      font-size: 1.48rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      line-height: 1.25;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .seal-couple-title span {
+      color: var(--honey-gold);
+      font-family: var(--font-en-italic);
+      font-style: italic;
+      font-size: 1.15rem;
+      margin: 0 4px;
+    }
+
+    .seal-hint {
+      margin-top: 18px;
+      font-family: var(--font-sans-ar);
+      font-size: 0.78rem;
+      color: #ffffff;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(94, 73, 52, 0.9);
+      border: 1px solid rgba(255, 246, 232, 0.35);
+      padding: 6px 18px;
+      border-radius: 22px;
+      box-shadow: 0 4px 16px rgba(58, 43, 30, 0.2);
+    }
+
+    .seal-hint i {
+      color: var(--glow-ivory);
+      font-size: 0.74rem;
+    }
+
+    /* =========================================================
+       الشاشة الأولى: نقية، مع تأثير تمازج تدريجي ناعم في الأسفل
+       ========================================================= */
+    .hero-full-screen {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      z-index: 2;
+      background: 
+        url('خلفيه تصاميم Ai.jpg') center center / cover no-repeat,
+        url('1.jpg') center center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 27vh 20px 10vh 20px;
+      text-align: center;
+    }
+
+    /* تأثير تمازج ناعم جداً عند نهاية الشاشة الأولى لدمجها مع القسم التالي بتمويه سلس */
+    .hero-full-screen::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: linear-gradient(to bottom, transparent, rgba(235, 221, 203, 0.85));
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-warm-spotlight {
+      position: absolute;
+      top: 24vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255, 248, 236, 0.45) 0%, rgba(255, 248, 236, 0) 72%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-unified-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* 1. عنوان حفل زفاف */
+    .hero-wedding-crest {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .hero-header-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .hero-ornament-line {
+      width: 30px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--espresso-ink));
+      opacity: 0.55;
+    }
+    .hero-ornament-line.right {
+      background: linear-gradient(90deg, var(--espresso-ink), transparent);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif-ar);
+      font-size: 1.25rem;
+      color: var(--espresso-ink);
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-shadow: 0 1px 12px rgba(255, 248, 238, 0.9);
+      padding-right: 3px;
+    }
+
+    /* 2. أسماء العرسان بمسافات واضحة ومتناسقة */
+    .hero-stacked-names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-name-line {
+      font-family: var(--font-names);
+      font-size: 2.85rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      text-shadow: 0 2px 16px rgba(255, 248, 238, 0.95);
+      line-height: 1.1;
+    }
+
+    .hero-name-amp {
+      font-family: var(--font-en-italic);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--honey-gold);
+      margin: 2px 0;
+      line-height: 1;
+    }
+
+    /* 3. مربعا الوقت والتاريخ */
+    .hero-meta-squares {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 242px;
+      margin-top: 42px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .meta-square-card {
+      flex: 1;
+      background: rgba(255, 250, 243, 0.82);
+      border: 1px solid rgba(176, 132, 78, 0.36);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      padding: 7px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      box-shadow: 0 6px 18px rgba(58, 43, 30, 0.08);
+    }
+
+    .meta-square-card i {
+      font-size: 0.85rem;
+      color: var(--honey-gold);
+    }
+
+    .meta-square-title {
+      font-family: var(--font-sans-ar);
+      font-size: 0.68rem;
+      color: var(--taupe-soft);
+    }
+
+    .meta-square-value {
+      font-family: var(--font-en);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       البطاقات والمحتوى
+       ========================================================= */
+    .content-flow {
+      position: relative;
+      z-index: 3;
+      padding: 36px 22px 155px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .section-card {
+      background: var(--card-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--gold-border);
+      border-radius: 28px;
+      padding: 52px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 
+        0 16px 40px rgba(58, 43, 30, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.9s cubic-bezier(0.2, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .section-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       بطاقة الدعوة + صورة البسملة 4.png + تمديد يتشــرف
+       ========================================================= */
+    .official-invite-card {
+      padding: 52px 24px 56px 24px;
+      gap: 0;
+    }
+
+    .bismillah-img-wrap {
+      width: 245px;
+      max-width: 78%;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bismillah-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: multiply;
+      filter: sepia(0.42) brightness(0.95);
+    }
+
+    .invite-honor-line {
+      font-family: var(--font-sans-ar);
+      font-size: 0.96rem;
+      font-weight: 400;
+      color: var(--taupe-soft);
+      letter-spacing: 0.4px;
+      margin-bottom: 14px;
+    }
+
+    .invite-fathers-line {
+      font-family: var(--font-serif-ar);
+      font-size: 1.32rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .invite-fathers-line .amp {
+      color: var(--honey-gold);
+      font-family: var(--font-en-italic);
+      font-style: italic;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .invite-request-line {
+      font-family: var(--font-sans-ar);
+      font-size: 0.94rem;
+      font-weight: 300;
+      color: var(--taupe-soft);
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    .invite-couple-names {
+      font-family: var(--font-names);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .invite-couple-names .sep-heart {
+      color: var(--honey-gold);
+      font-size: 1.05rem;
+      line-height: 1;
+      opacity: 0.92;
+    }
+
+    .invite-closing-line {
+      font-family: var(--font-sans-ar);
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--taupe-soft);
+      letter-spacing: 0.3px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(176, 132, 78, 0.24);
+      width: 82%;
+    }
+
+    /* الفواصل بالقلب ♡ */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: -10px 0;
+    }
+
+    .section-divider .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, rgba(176, 132, 78, 0.34), transparent);
+    }
+
+    .section-divider .line.right {
+      background: linear-gradient(to right, rgba(176, 132, 78, 0.34), transparent);
+    }
+
+    .section-divider .heart-icon {
+      color: var(--honey-gold);
+      font-size: 0.95rem;
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    .section-clean-title {
+      font-family: var(--font-sans-ar);
+      font-size: 1.14rem;
+      color: var(--espresso-ink);
+      font-weight: 500;
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .section-clean-title::before,
+    .section-clean-title::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--honey-gold));
+    }
+    .section-clean-title::after {
+      background: linear-gradient(90deg, var(--honey-gold), transparent);
+    }
+
+    /* قسم الموعد والمكان */
+    .compact-location-section {
+      padding: 52px 24px;
+      gap: 26px;
+    }
+
+    .location-info-clean {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-venue {
+      font-family: var(--font-serif-ar);
+      font-size: 1.6rem;
+      color: var(--espresso-ink);
+      font-weight: 700;
+    }
+
+    .location-sub {
+      font-family: var(--font-sans-ar);
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--taupe-soft);
+    }
+
+    /* بطاقة التقويم */
+    .mini-calendar-card {
+      width: 196px;
+      margin: 4px auto;
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(58, 43, 30, 0.08), 0 0 0 1px var(--gold-border);
+      color: var(--espresso-ink);
+      text-align: center;
+    }
+
+    .mini-cal-header {
+      background: linear-gradient(135deg, #b0844e, #8c6436);
+      color: #ffffff;
+      padding: 9px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .mini-cal-number-box {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .mini-cal-day-num {
+      font-family: var(--font-en);
+      font-size: 4.1rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--espresso-ink);
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+
+    .mini-cal-footer {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--honey-gold);
+      margin-top: -2px;
+      font-family: var(--font-en);
+    }
+
+    .mini-cal-time {
+      font-family: var(--font-en);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--espresso-ink);
+      margin: 4px 0 14px 0;
+    }
+
+    .countdown-title {
+      font-family: var(--font-sans-ar);
+      font-size: 0.98rem;
+      color: var(--espresso-ink);
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .countdown-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      direction: ltr;
+    }
+
+    .count-unit {
+      background: #ffffff;
+      border: 1.5px solid var(--gold-border);
+      border-radius: 14px;
+      width: 66px;
+      padding: 12px 0;
+      box-shadow: 0 5px 15px rgba(58, 43, 30, 0.06);
+    }
+
+    .count-num {
+      font-family: var(--font-en);
+      font-size: 1.62rem;
+      font-weight: 800;
+      color: var(--honey-deep);
+      line-height: 1.1;
+    }
+
+    .count-lbl {
+      font-family: var(--font-sans-ar);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      margin-top: 4px;
+    }
+
+    /* =========================================================
+       برنامج الحفل
+       ========================================================= */
+    .timeline-container {
+      position: relative;
+      margin: 10px auto 6px auto;
+      width: 100%;
+      max-width: 315px;
+    }
+
+    .timeline-track {
+      position: absolute;
+      left: 50%;
+      top: 14px;
+      bottom: 14px;
+      width: 1px;
+      background: rgba(176, 132, 78, 0.28);
+      transform: translateX(-50%);
+    }
+
+    .timeline-progress {
+      position: absolute;
+      left: 50%;
+      top: 14px;
+      width: 2px;
+      height: 0%;
+      background: linear-gradient(180deg, var(--honey-gold), var(--espresso-ink));
+      transform: translateX(-50%);
+      transition: height 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .traveling-bead {
+      position: absolute;
+      left: 50%;
+      top: 14px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid var(--honey-gold);
+      box-shadow: 0 0 10px rgba(176, 132, 78, 0.45);
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none;
+      transition: top 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .tl-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 34px;
+      z-index: 2;
+      opacity: 0.52;
+      transform: scale(0.97);
+      transition: all 0.4s ease;
+    }
+
+    .tl-row:last-child { margin-bottom: 0; }
+
+    .tl-row.active {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+
+    .tl-time {
+      width: 44%;
+      text-align: left;
+      font-size: 1.06rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      color: var(--taupe-soft);
+      direction: ltr;
+      font-family: var(--font-en);
+    }
+
+    .tl-row.active .tl-time { color: var(--honey-gold); }
+
+    .tl-static-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(176, 132, 78, 0.35);
+      border: 2px solid #ffffff;
+    }
+
+    .tl-row.active .tl-static-dot {
+      background: var(--honey-gold);
+      transform: scale(1.35);
+    }
+
+    .tl-text {
+      width: 44%;
+      text-align: right;
+      font-family: var(--font-sans-ar);
+      font-size: 0.96rem;
+      font-weight: 400;
+      color: var(--espresso-ink);
+    }
+
+    /* =========================================================
+       تفاصيل الحفل
+       ========================================================= */
+    .party-details-card-minimal {
+      padding: 48px 24px;
+      gap: 16px;
+    }
+
+    .clean-simple-box,
+    .rsvp-simple-card,
+    .rsvp-free-btn-wrap {
+      width: 100%;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: all 0.7s cubic-bezier(0.2, 0.8, 0.25, 1);
+    }
+
+    .section-card.visible .clean-simple-box {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.15s;
+    }
+
+    .section-card.visible .rsvp-simple-card {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
+    }
+
+    .section-card.visible .rsvp-free-btn-wrap {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.45s;
+    }
+
+    .clean-simple-box,
+    .rsvp-simple-card {
+      background: #ffffff;
+      border: 1px solid var(--gold-border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(58, 43, 30, 0.04);
+    }
+
+    .clean-simple-text {
+      font-family: var(--font-sans-ar);
+      font-size: 0.94rem;
+      color: var(--espresso-ink);
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .rsvp-free-btn-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .rsvp-simple-btn-clean {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #b0844e 0%, #8c6436 100%);
+      border: 1px solid rgba(255, 246, 232, 0.4);
+      color: #ffffff;
+      padding: 14px 36px;
+      border-radius: 18px;
+      font-size: 0.96rem;
+      font-family: var(--font-sans-ar);
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(140, 100, 54, 0.25);
+      width: 100%;
+      max-width: 245px;
+      transition: transform 0.2s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .rsvp-simple-btn-clean i {
+      color: var(--glow-ivory);
+    }
+
+    .rsvp-simple-btn-clean:active {
+      transform: scale(0.97);
+    }
+
+    /* =========================================================
+       القسم الختامي مع تصغير تاريخ الختام
+       ========================================================= */
+    .closing-card-lux {
+      padding: 52px 26px 38px 26px;
+      gap: 16px;
+    }
+
+    .closing-text-wrap {
+      font-family: var(--font-sans-ar);
+      font-size: 0.94rem;
+      color: var(--taupe-soft);
+      line-height: 1.9;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .closing-text-wrap .closing-heart {
+      color: var(--honey-gold);
+      font-size: 1.02rem;
+      line-height: 1;
+    }
+
+    .couple-names-closing {
+      font-family: var(--font-names);
+      font-size: 2.35rem;
+      font-weight: 700;
+      color: var(--espresso-ink);
+      margin-top: 6px;
+    }
+
+    .couple-names-closing span {
+      font-family: var(--font-en-italic);
+      font-size: 1.65rem;
+      font-style: italic;
+      color: var(--honey-gold);
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .wedding-date-closing {
+      font-family: var(--font-en);
+      font-size: 1.05rem;
+      color: var(--honey-gold);
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+
+    .creator-credit {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(176, 132, 78, 0.22);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .creator-link {
+      color: var(--taupe-soft);
+      text-decoration: none;
+      font-family: var(--font-en);
+      font-size: 0.84rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease;
+    }
+
+    .creator-link i {
+      color: var(--honey-gold);
+      font-size: 0.88rem;
+    }
+
+    .creator-link:hover {
+      color: var(--espresso-ink);
+    }
+
+    /* =========================================================
+       نافذة تأكيد الحضور
+       ========================================================= */
+    #rsvp-page {
+      position: fixed;
+      inset: 0;
+      background: rgba(243, 233, 220, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(100%);
+      transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+      overflow-y: auto;
+    }
+
+    #rsvp-page.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .rsvp-card-full {
+      width: 100%;
+      max-width: 380px;
+      background: #fffcf7;
+      border: 1px solid var(--gold-border);
+      border-radius: 28px;
+      padding: 40px 24px;
+      text-align: center;
+      box-shadow: 0 24px 55px rgba(58, 43, 30, 0.14);
+      position: relative;
+    }
+
+    .rsvp-close-btn {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 36px;
+      height: 36px;
+      background: var(--bg-warm-cream);
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      color: var(--espresso-ink);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rsvp-title-page {
+      font-family: var(--font-sans-ar);
+      font-size: 1.32rem;
+      color: var(--espresso-ink);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .rsvp-input {
+      width: 100%;
+      background: var(--bg-warm-cream);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 13px 15px;
+      color: var(--espresso-ink);
+      font-family: var(--font-sans-ar);
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-top: 14px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .rsvp-input:focus {
+      border-color: var(--honey-gold);
+      background: #ffffff;
+    }
+
+    .rsvp-input::placeholder {
+      color: var(--taupe-soft);
+      opacity: 0.75;
+      font-weight: 300;
+    }
+
+    .rsvp-choice-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 14px;
+      font-family: var(--font-sans-ar);
+      font-size: 0.94rem;
+      font-weight: 500;
+      margin-top: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .rsvp-accept {
+      background: linear-gradient(135deg, #b0844e 0%, #8c6436 100%);
+      color: #ffffff;
+      border: 1px solid rgba(255, 246, 232, 0.4);
+      box-shadow: 0 8px 20px rgba(140, 100, 54, 0.24);
+    }
+
+    .rsvp-decline {
+      background: var(--bg-warm-cream);
+      color: var(--taupe-soft);
+      border: 1px solid var(--gold-border);
+      font-weight: 400;
+    }
+
+    /* =========================================================
+       شريط الملاحة السفلي (ظاهر وثابت طبيعياً)
+       ========================================================= */
+    .glass-bottom-bar {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 412px;
+      background: rgba(255, 251, 246, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--gold-border);
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 12px;
+      z-index: 990;
+      box-shadow: 0 12px 32px rgba(58, 43, 30, 0.12);
+    }
+
+    .bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--espresso-ink);
+      text-decoration: none;
+      font-family: var(--font-sans-ar);
+      font-size: 0.72rem;
+      font-weight: 400;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 14px;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .bar-item:active {
+      transform: scale(0.95);
+      background: rgba(176, 132, 78, 0.12);
+    }
+
+    .bar-item i {
+      font-size: 1.12rem;
+      color: var(--honey-gold);
+      pointer-events: none;
+    }
+
+    .bar-item span {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-frame">
+
+    <div class="auto-scroll-pill" id="autoScrollBtn" onclick="toggleAutoScroll()">
+      <i class="fa-solid fa-play" id="scrollBtnIcon"></i>
+      <span id="scrollBtnText">تمرير تلقائي</span>
+    </div>
+
+    <div class="luxury-canvas"></div>
+    <canvas id="shimmer-canvas"></canvas>
+
+    <!-- شاشة الختم المُصغّرة مع أسماء راكان & لين بدون كلمة OPEN -->
+    <div id="curtain-screen">
+      <div class="curtain-panel curtain-left"></div>
+      <div class="curtain-panel curtain-right"></div>
+      
+      <div class="seal-center-btn" onclick="openRoyalCurtain()">
+        <div class="seal-aura-halo"></div>
+
+        <div class="exact-ivory-seal">
+          <div class="seal-branches-exact">❦ &nbsp; ❦ &nbsp; ❦</div>
+          
+          <div class="seal-center-content">
+            <div class="seal-couple-title">راكان <span>&</span> لين</div>
+          </div>
+
+          <div class="seal-branches-exact">❦ &nbsp; ❦ &nbsp; ❦</div>
+        </div>
+        <div class="seal-hint">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>المس الختم لفتح الدعوة</span>
+          <i class="fa-solid fa-sparkles"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- القسم 1: الشاشة الأولى مع تدرج تمازجي ناعم (Fade) في الأسفل وتعديل المربعات والأسماء -->
+    <header class="hero-full-screen">
+      <div class="hero-warm-spotlight"></div>
+
+      <div class="hero-unified-block">
+        <div class="hero-wedding-crest" style="margin-top: 10px;">
+          <div class="hero-header-box">
+            <div class="hero-ornament-line"></div>
+            <div class="hero-title">حفل زفاف</div>
+            <div class="hero-ornament-line right"></div>
+          </div>
+        </div>
+
+        <!-- أسماء العرسان -->
+        <div class="hero-stacked-names" style="margin-top: 14px;">
+          <span class="hero-name-line">راكان</span>
+          <span class="hero-name-amp">&</span>
+          <span class="hero-name-line">لين</span>
+        </div>
+
+        <!-- مربعا الوقت والتاريخ منزلان للأسفل بمسافة مريحة -->
+        <div class="hero-meta-squares" style="margin-top: 52px;">
+          <div class="meta-square-card">
+            <i class="fa-regular fa-clock"></i>
+            <span class="meta-square-title">مساءً</span>
+            <span class="meta-square-value">7:00 PM</span>
+          </div>
+          <div class="meta-square-card">
+            <i class="fa-regular fa-calendar"></i>
+            <span class="meta-square-title">الأحد</span>
+            <span class="meta-square-value">2026.11.22</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content-flow">
+
+      <!-- القسم 2: بطاقة الدعوة + صورة البسملة 4.png + تمديد يتشــرف -->
+      <section class="section-card official-invite-card">
+        
+        <div class="bismillah-img-wrap">
+          <img src="4.png" alt="بسم الله الرحمن الرحيم" onerror="this.onerror=null; this.src='4.jpg';">
+        </div>
+
+        <div class="invite-honor-line">بكلّ حبٍّ وسرور، يتشــرف</div>
+
+        <div class="invite-fathers-line">
+          السيد أحمد يوسف <span class="amp">&</span> السيد فايز جلال
+        </div>
+
+        <div class="invite-request-line">
+          بدعوتكم لمشاركتنا فرحة العمر وحضور حفل زفاف ولديهما
+        </div>
+
+        <div class="invite-couple-names">
+          <span>راكان</span>
+          <span class="sep-heart">♡</span>
+          <span>لين</span>
+        </div>
+
+        <div class="invite-closing-line">
+          حضوركم تشريفٌ لنا، وبكم تكتمل بهجة ليلتنا
+        </div>
+      </section>
+
+      <div class="section-divider">
+        <div class="line"></div>
+        <div class="heart-icon">♡</div>
+        <div class="line right"></div>
+      </div>
+
+      <!-- القسم 3: الموعد والمكان + العد التنازلي بخط غامق -->
+      <section class="section-card compact-location-section" id="calendarSection">
+        <div class="section-clean-title">الموعد والمكان</div>
+
+        <div class="location-info-clean">
+          <div class="location-venue">قاعات النعمان للاحتفالات</div>
+          <div class="location-sub">عمان - شارع الأردن</div>
+        </div>
+
+        <div class="mini-calendar-card">
+          <div class="mini-cal-header">
+            <span>SUN</span>
+            <span>NOVEMBER</span>
+            <span>2026</span>
+          </div>
+          <div class="mini-cal-number-box">
+            <div class="mini-cal-day-num" id="rollingDate">--</div>
+          </div>
+          <div class="mini-cal-footer">SUNDAY</div>
+          <div class="mini-cal-time">7:00 PM</div>
+        </div>
+
+        <div class="countdown-title">العد التنازلي لليلة العمر</div>
+        <div class="countdown-boxes">
+          <div class="count-unit">
+            <div class="count-num" id="days">--</div>
+            <div class="count-lbl">أيام</div>
+          </div>
+          <div class="count-unit">
+            <div class="count-num" id="hours">--</div>
+            <div class="count-lbl">ساعات</div>
+          </div>
+          <div class="count-unit">
+            <div class="count-num" id="minutes">--</div>
+            <div class="count-lbl">دقائق</div>
+          </div>
+          <div class="count-unit">
+            <div class="count-num" id="seconds">--</div>
+            <div class="count-lbl">ثواني</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider">
+        <div class="line"></div>
+        <div class="heart-icon">♡</div>
+        <div class="line right"></div>
+      </div>
+
+      <!-- القسم 4: برنامج الحفل -->
+      <section class="section-card" id="timelineSection">
+        <div class="section-clean-title">برنامج الحفل</div>
+
+        <div class="timeline-container" id="timelineBox">
+          <div class="timeline-track"></div>
+          <div class="timeline-progress" id="timelineProgress"></div>
+          <div class="traveling-bead" id="travelingBead"></div>
+
+          <div class="tl-row" data-index="0">
+            <div class="tl-time">6:45 PM</div>
+            <div class="tl-static-dot"></div>
+            <div class="tl-text">الوصول والترحيب</div>
+          </div>
+
+          <div class="tl-row" data-index="1">
+            <div class="tl-time">7:00 PM</div>
+            <div class="tl-static-dot"></div>
+            <div class="tl-text">الزفة</div>
+          </div>
+
+          <div class="tl-row" data-index="2">
+            <div class="tl-time">7:30 PM</div>
+            <div class="tl-static-dot"></div>
+            <div class="tl-text">دخول العروسين</div>
+          </div>
+
+          <div class="tl-row" data-index="3">
+            <div class="tl-time">9:00 PM</div>
+            <div class="tl-static-dot"></div>
+            <div class="tl-text">تناول العشاء</div>
+          </div>
+
+          <div class="tl-row" data-index="4">
+            <div class="tl-time">10:00 PM</div>
+            <div class="tl-static-dot"></div>
+            <div class="tl-text">الاحتفال والتصوير</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider">
+        <div class="line"></div>
+        <div class="heart-icon">♡</div>
+        <div class="line right"></div>
+      </div>
+
+      <!-- القسم 5: تفاصيل الحفل -->
+      <section class="section-card party-details-card-minimal">
+        <div class="section-clean-title">تفاصيل الحفل</div>
+
+        <div class="clean-simple-box">
+          <div class="clean-simple-text">
+            يُمنع اصطحاب الأطفال
+          </div>
+        </div>
+
+        <div class="rsvp-simple-card">
+          <div class="clean-simple-text">
+            نرجو تأكيد الحضور الكريم
+          </div>
+        </div>
+
+        <div class="rsvp-free-btn-wrap">
+          <button type="button" class="rsvp-simple-btn-clean" onclick="openRSVP()">
+            <i class="fa-regular fa-circle-check"></i>
+            <span>تأكيد الحضور</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="section-divider">
+        <div class="line"></div>
+        <div class="heart-icon">♡</div>
+        <div class="line right"></div>
+      </div>
+
+      <!-- القسم 6: الختام مع القلب ♡ وتصغير تاريخ الختام -->
+      <section class="section-card closing-card-lux">
+        <div class="closing-text-wrap">
+          <span>أهلاً بكم في ليلتنا، وبكم تحلو وتكتمل مسراتنا</span>
+          <span class="closing-heart">♡</span>
+        </div>
+
+        <div class="couple-names-closing">
+          راكان <span>&</span> لين
+        </div>
+        <div class="wedding-date-closing">22.11.2026</div>
+
+        <div class="creator-credit">
+          <a href="https://instagram.com/lumea_.digital" target="_blank" class="creator-link">
+            <span>MADE BY LUMEA</span>
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- شريط الملاحة السفلي (ظاهر وثابت طبيعياً) -->
+    <nav class="glass-bottom-bar">
+      <div class="bar-item" onclick="openRSVP()">
+        <i class="fa-regular fa-circle-check"></i>
+        <span>تأكيد الحضور</span>
+      </div>
+
+      <a href="https://maps.app.goo.gl/9yX3Vj2QxT17m9Jm6" target="_blank" class="bar-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>الموقع</span>
+      </a>
+
+      <div class="bar-item" onclick="togglePlayMusic()">
+        <i class="fa-solid fa-music" id="music-btn-icon"></i>
+        <span>الموسيقى</span>
+      </div>
+
+      <div class="bar-item" onclick="addToCalendar()">
+        <i class="fa-regular fa-calendar-check"></i>
+        <span>التقويم</span>
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- نافذة تأكيد الحضور -->
+  <div id="rsvp-page">
+    <div class="rsvp-card-full">
+      <button type="button" class="rsvp-close-btn" onclick="closeRSVP()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div class="rsvp-title-page">تأكيد الحضور</div>
+      <p style="font-size: 0.9rem; font-weight: 300; color: var(--taupe-soft); margin-bottom: 8px;">يسعدنا حضوركم ومشاركتنا فرحتنا 🤍</p>
+      
+      <input type="text" id="guestName" class="rsvp-input" placeholder="الاسم الكريم">
+      <input type="number" id="guestCount" class="rsvp-input" placeholder="عدد الحضور (مثلاً: 1 أو 2)" min="1" max="10">
+      <textarea id="guestWishes" class="rsvp-input" rows="3" placeholder="رسالة لطيفة أو مباركة للعروسين 🤍..."></textarea>
+
+      <button type="button" class="rsvp-choice-btn rsvp-accept" onclick="submitRSVP(true)">
+        <i class="fa-solid fa-heart"></i>
+        <span>سأحضر بإذن الله</span>
+      </button>
+
+      <button type="button" class="rsvp-choice-btn rsvp-decline" onclick="submitRSVP(false)">
+        <span>لن أتمكن من الحضور</span>
+      </button>
+    </div>
+  </div>
+
+  <audio id="wedding-audio" loop preload="auto">
+    <source id="audio-source" src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const curtainScreen = document.getElementById('curtain-screen');
+    const audioTrack = document.getElementById('wedding-audio');
+    const musicIcon = document.getElementById('music-btn-icon');
+    let isPlaying = false;
+    let hasOpened = false;
+
+    function openRoyalCurtain() {
+      if (hasOpened) return;
+      hasOpened = true;
+
+      curtainScreen.classList.add('opened');
+      triggerShimmerBurst();
+
+      audioTrack.play().then(() => {
+        isPlaying = true;
+        musicIcon.classList.remove('fa-music');
+        musicIcon.classList.add('fa-pause');
+      }).catch(err => console.log('Autoplay blocked:', err));
+
+      setTimeout(() => {
+        curtainScreen.style.display = 'none';
+        document.getElementById('autoScrollBtn').classList.add('visible');
+        setTimeout(startAutoScroll, 500);
+      }, 1300);
+    }
+
+    function togglePlayMusic() {
+      if (!isPlaying) {
+        audioTrack.play().then(() => {
+          isPlaying = true;
+          musicIcon.classList.remove('fa-music');
+          musicIcon.classList.add('fa-pause');
+        });
+      } else {
+        audioTrack.pause();
+        isPlaying = false;
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-music');
+      }
+    }
+
+    let autoScrollInterval = null;
+    let isAutoScrolling = false;
+    const scrollSpeed = 1.35;
+
+    function startAutoScroll() {
+      if (isAutoScrolling) return;
+      isAutoScrolling = true;
+      updateScrollButton(true);
+
+      autoScrollInterval = setInterval(() => {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (window.scrollY >= maxScroll - 5) {
+          stopAutoScroll();
+        } else {
+          window.scrollBy({ top: scrollSpeed, behavior: 'auto' });
+        }
+      }, 16);
+    }
+
+    function stopAutoScroll() {
+      if (!isAutoScrolling) return;
+      isAutoScrolling = false;
+      clearInterval(autoScrollInterval);
+      updateScrollButton(false);
+    }
+
+    function toggleAutoScroll() {
+      if (isAutoScrolling) {
+        stopAutoScroll();
+      } else {
+        startAutoScroll();
+      }
+    }
+
+    function updateScrollButton(active) {
+      const icon = document.getElementById('scrollBtnIcon');
+      const text = document.getElementById('scrollBtnText');
+      if (active) {
+        icon.className = 'fa-solid fa-pause';
+        text.textContent = 'إيقاف النزول';
+      } else {
+        icon.className = 'fa-solid fa-play';
+        text.textContent = 'تمرير تلقائي';
+      }
+    }
+
+    window.addEventListener('touchstart', () => stopAutoScroll(), { passive: true });
+    window.addEventListener('wheel', () => stopAutoScroll(), { passive: true });
+
+    let hasRolled = false;
+    function triggerDateRoll() {
+      if (hasRolled) return;
+      hasRolled = true;
+
+      const dateElem = document.getElementById('rollingDate');
+      const target = 22;
+      let current = 1;
+      const duration = 1200;
+      const interval = duration / target;
+
+      const timer = setInterval(() => {
+        current++;
+        dateElem.textContent = current < 10 ? '0' + current : current;
+        if (current >= target) {
+          clearInterval(timer);
+          dateElem.textContent = '22';
+          dateElem.style.transform = 'scale(1.1)';
+          setTimeout(() => { dateElem.style.transform = 'scale(1)'; }, 200);
+        }
+      }, interval);
+    }
+
+    function openRSVP() {
+      stopAutoScroll();
+      document.getElementById('rsvp-page').classList.add('active');
+    }
+
+    function closeRSVP() {
+      document.getElementById('rsvp-page').classList.remove('active');
+    }
+
+    function submitRSVP(willAttend) {
+      const name = document.getElementById('guestName').value.trim();
+      const count = document.getElementById('guestCount').value.trim();
+      const wishes = document.getElementById('guestWishes').value.trim();
+      
+      if (!name) {
+        alert('يرجى كتابة الاسم الكريم أولاً');
+        return;
+      }
+
+      const statusText = willAttend ? "سأحضر بإذن الله 🤍" : "أعتذر عن الحضور، مع أطيب التمنيات";
+      const targetPhone = "962779863541";
+      
+      let messageContent = 
+        `تأكيد حضور حفل زفاف راكان & لين 🤍\n` +
+        `الاسم: ${name}\n` +
+        `الحالة: ${statusText}`;
+
+      if (willAttend && count) {
+        messageContent += `\nعدد الحضور: ${count}`;
+      }
+
+      if (wishes) {
+        messageContent += `\nرسالة للعروسين: ${wishes}`;
+      }
+
+      window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(messageContent)}`, '_blank');
+      closeRSVP();
+    }
+
+    const cards = document.querySelectorAll('.section-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.id === 'calendarSection') {
+            triggerDateRoll();
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(card => observer.observe(card));
+
+    const timelineBox = document.getElementById('timelineBox');
+    const timelineProgress = document.getElementById('timelineProgress');
+    const travelingBead = document.getElementById('travelingBead');
+    const tlRows = document.querySelectorAll('.tl-row');
+
+    function updateTimelineMotion() {
+      if (!timelineBox) return;
+      const rect = timelineBox.getBoundingClientRect();
+      const triggerY = window.innerHeight * 0.52;
+
+      if (rect.top <= triggerY && rect.bottom >= triggerY - rect.height) {
+        let progress = (triggerY - rect.top) / rect.height;
+        progress = Math.max(0, Math.min(1, progress));
+
+        const beadTop = progress * rect.height;
+        travelingBead.style.top = `${beadTop}px`;
+        timelineProgress.style.height = `${progress * 100}%`;
+
+        tlRows.forEach(row => {
+          const rowCenter = row.offsetTop + (row.offsetHeight / 2);
+          if (Math.abs(rowCenter - beadTop) < 24 || rowCenter <= beadTop) {
+            row.classList.add('active');
+          } else {
+            row.classList.remove('active');
+          }
+        });
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateTimelineMotion);
+    }, { passive: true });
+    updateTimelineMotion();
+
+    /* بريق غبار الضوء العسلي واللؤلؤ المتطاير */
+    const canvas = document.getElementById('shimmer-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class ShimmerDust {
+      constructor(isBurst = false, initialScatter = false) {
+        this.isBurst = isBurst;
+        this.initialScatter = initialScatter;
+        this.init();
+      }
+      init() {
+        const palette = ['#b0844e', '#d6b384', '#fff8eb', '#c89e68'];
+        this.color = palette[Math.floor(Math.random() * palette.length)];
+
+        if (this.isBurst) {
+          this.x = canvas.width / 2;
+          this.y = canvas.height / 2;
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 4 + 1.3;
+          this.speedX = Math.cos(angle) * speed;
+          this.speedY = Math.sin(angle) * speed;
+          this.size = Math.random() * 2 + 0.9;
+          this.opacity = 0.92;
+        } else {
+          this.x = Math.random() * canvas.width;
+          this.y = this.initialScatter ? Math.random() * canvas.height : -10;
+          this.size = Math.random() * 1.9 + 0.7;
+          this.speedY = Math.random() * 0.45 + 0.18;
+          this.swayAmp = Math.random() * 0.45 + 0.15;
+          this.opacity = Math.random() * 0.48 + 0.18;
+          this.twinkle = Math.random() * Math.PI * 2;
+          this.twinkleSpeed = Math.random() * 0.028 + 0.012;
+        }
+      }
+      update() {
+        if (this.isBurst) {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.speedY += 0.022;
+          this.opacity -= 0.013;
+        } else {
+          this.twinkle += this.twinkleSpeed;
+          this.y += this.speedY;
+          this.x += Math.sin(this.twinkle) * this.swayAmp;
+
+          if (this.y > canvas.height + 10) {
+            this.y = -10;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+      }
+      draw() {
+        if (this.opacity <= 0) return;
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        
+        const currentOpacity = this.isBurst ? this.opacity : (Math.sin(this.twinkle) * 0.2 + this.opacity);
+        ctx.globalAlpha = Math.max(0, currentOpacity);
+
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = 'rgba(255, 246, 232, 0.85)';
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 45; i++) particles.push(new ShimmerDust(false, true));
+
+    function triggerShimmerBurst() {
+      for (let i = 0; i < 32; i++) {
+        particles.push(new ShimmerDust(true));
+      }
+    }
+
+    function renderShimmer() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.update();
+        p.draw();
+        if (p.isBurst && p.opacity <= 0) {
+          particles.splice(i, 1);
+        }
+      }
+      requestAnimationFrame(renderShimmer);
+    }
+    renderShimmer();
+
+    const weddingDate = new Date('2026-11-22T19:00:00+03:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+      } else {
+        document.querySelector('.countdown-boxes').innerHTML = "<div style='font-size: 1.05rem; color: #b0844e;'>مرحباً بكم في ليلتنا الجميلة!</div>";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function addToCalendar() {
+      const icsData = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:حفل زفاف راكان & لين\nLOCATION:قاعات النعمان للاحتفالات - عمان شارع الأردن\nDTSTART:20261122T160000Z\nDTEND:20261122T210000Z\nDESCRIPTION:حفل زفاف راكان ولين\nEND:VEVENT\nEND:VCALENDAR`;
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', 'wedding-invite.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
