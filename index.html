@@ -315,7 +315,7 @@
     }
 
     /* =========================================================
-       الشاشة الأولى: نقية، مع تأثير تمازج تدريجي ناعم في الأسفل
+       الشاشة الأولى: متناسقة بـ خط موحد لكلمة حفل زفاف وتنزيل المربعات
        ========================================================= */
     .hero-full-screen {
       width: 100%;
@@ -333,7 +333,6 @@
       text-align: center;
     }
 
-    /* تأثير تمازج ناعم جداً عند نهاية الشاشة الأولى لدمجها مع القسم التالي بتمويه سلس */
     .hero-full-screen::after {
       content: '';
       position: absolute;
@@ -368,12 +367,12 @@
       z-index: 3;
     }
 
-    /* 1. عنوان حفل زفاف */
+    /* 1. عنوان حفل زفاف بخط موحد ومناسب */
     .hero-wedding-crest {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 10px;
+      margin-top: 14px;
     }
 
     .hero-header-box {
@@ -395,7 +394,7 @@
 
     .hero-title {
       font-family: var(--font-serif-ar);
-      font-size: 1.25rem;
+      font-size: 1.32rem;
       color: var(--espresso-ink);
       letter-spacing: 3px;
       font-weight: 700;
@@ -403,12 +402,13 @@
       padding-right: 3px;
     }
 
-    /* 2. أسماء العرسان بمسافات واضحة ومتناسقة */
+    /* 2. أسماء العرسان */
     .hero-stacked-names {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-top: 26px;
     }
 
     .hero-name-line {
@@ -429,7 +429,7 @@
       line-height: 1;
     }
 
-    /* 3. مربعا الوقت والتاريخ */
+    /* 3. مربعا الوقت والتاريخ في مكان مريح ومتوازن */
     .hero-meta-squares {
       display: flex;
       justify-content: center;
@@ -437,7 +437,7 @@
       gap: 12px;
       width: 100%;
       max-width: 242px;
-      margin-top: 42px;
+      margin-top: 58px;
       position: relative;
       z-index: 3;
     }
@@ -655,10 +655,10 @@
       background: linear-gradient(90deg, var(--honey-gold), transparent);
     }
 
-    /* قسم الموعد والمكان */
+    /* قسم الموعد والمكان مع زر احفظ التاريخ الأنيق */
     .compact-location-section {
       padding: 52px 24px;
-      gap: 26px;
+      gap: 24px;
     }
 
     .location-info-clean {
@@ -682,10 +682,41 @@
       color: var(--taupe-soft);
     }
 
+    /* زر حفظ التاريخ والتقويم الأنيق */
+    .save-date-btn-lux {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 250, 243, 0.9);
+      border: 1px solid var(--gold-border);
+      color: var(--honey-deep);
+      padding: 10px 22px;
+      border-radius: 16px;
+      font-size: 0.86rem;
+      font-family: var(--font-sans-ar);
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(58, 43, 30, 0.05);
+      transition: all 0.25s ease;
+      margin-top: 2px;
+    }
+
+    .save-date-btn-lux i {
+      color: var(--honey-gold);
+      font-size: 0.92rem;
+    }
+
+    .save-date-btn-lux:hover {
+      background: #ffffff;
+      border-color: var(--honey-gold);
+      transform: translateY(-2px);
+    }
+
     /* بطاقة التقويم */
     .mini-calendar-card {
       width: 196px;
-      margin: 4px auto;
+      margin: 2px auto;
       background: #ffffff;
       border-radius: 20px;
       overflow: hidden;
@@ -784,7 +815,7 @@
     }
 
     /* =========================================================
-       برنامج الحفل
+       برنامج الحفل (مع أرقام غامقة وبارزة)
        ========================================================= */
     .timeline-container {
       position: relative;
@@ -852,15 +883,15 @@
     .tl-time {
       width: 44%;
       text-align: left;
-      font-size: 1.06rem;
-      font-weight: 600;
+      font-size: 1.08rem;
+      font-weight: 700;
       letter-spacing: 0.8px;
       color: var(--taupe-soft);
       direction: ltr;
       font-family: var(--font-en);
     }
 
-    .tl-row.active .tl-time { color: var(--honey-gold); }
+    .tl-row.active .tl-time { color: var(--honey-deep); }
 
     .tl-static-dot {
       width: 6px;
@@ -880,7 +911,7 @@
       text-align: right;
       font-family: var(--font-sans-ar);
       font-size: 0.96rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--espresso-ink);
     }
 
@@ -1179,7 +1210,7 @@
     }
 
     /* =========================================================
-       شريط الملاحة السفلي (ظاهر وثابت طبيعياً)
+       شريط الملاحة السفلي
        ========================================================= */
     .glass-bottom-bar {
       position: fixed;
@@ -1273,12 +1304,12 @@
       </div>
     </div>
 
-    <!-- القسم 1: الشاشة الأولى مع تدرج تمازجي ناعم (Fade) في الأسفل وتعديل المربعات والأسماء -->
+    <!-- القسم 1: الشاشة الأولى -->
     <header class="hero-full-screen">
       <div class="hero-warm-spotlight"></div>
 
       <div class="hero-unified-block">
-        <div class="hero-wedding-crest" style="margin-top: 10px;">
+        <div class="hero-wedding-crest" style="margin-top: 36px;">
           <div class="hero-header-box">
             <div class="hero-ornament-line"></div>
             <div class="hero-title">حفل زفاف</div>
@@ -1287,14 +1318,14 @@
         </div>
 
         <!-- أسماء العرسان -->
-        <div class="hero-stacked-names" style="margin-top: 14px;">
+        <div class="hero-stacked-names" style="margin-top: 26px;">
           <span class="hero-name-line">راكان</span>
           <span class="hero-name-amp">&</span>
           <span class="hero-name-line">لين</span>
         </div>
 
-        <!-- مربعا الوقت والتاريخ منزلان للأسفل بمسافة مريحة -->
-        <div class="hero-meta-squares" style="margin-top: 52px;">
+        <!-- مربعا الوقت والتاريخ في مكان مريح ومتوازن -->
+        <div class="hero-meta-squares" style="margin-top: 58px;">
           <div class="meta-square-card">
             <i class="fa-regular fa-clock"></i>
             <span class="meta-square-title">مساءً</span>
@@ -1302,8 +1333,8 @@
           </div>
           <div class="meta-square-card">
             <i class="fa-regular fa-calendar"></i>
-            <span class="meta-square-title">الأحد</span>
-            <span class="meta-square-value">2026.11.22</span>
+            <span class="meta-square-title">الأربعاء</span>
+            <span class="meta-square-value">2026.12.02</span>
           </div>
         </div>
       </div>
@@ -1345,25 +1376,33 @@
         <div class="line right"></div>
       </div>
 
-      <!-- القسم 3: الموعد والمكان + العد التنازلي بخط غامق -->
+      <!-- القسم 3: الموعد والمكان مع زر احفظ التاريخ الأنيق -->
       <section class="section-card compact-location-section" id="calendarSection">
         <div class="section-clean-title">الموعد والمكان</div>
 
         <div class="location-info-clean">
           <div class="location-venue">قاعات النعمان للاحتفالات</div>
           <div class="location-sub">عمان - شارع الأردن</div>
+          <a href="https://maps.app.goo.gl/HUAG8hT1xmqAZkW99?g_st=ic" target="_blank" class="save-date-btn-lux" style="margin-top: 10px;">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>فتح موقع القاعة على الخريطة</span>
+          </a>
+          <button type="button" class="save-date-btn-lux" onclick="addToCalendar()" style="margin-top: 6px; border: none; cursor: pointer; width: 100%;">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>احفظ موعد الزفاف في التقويم</span>
+          </button>
         </div>
 
-        <div class="mini-calendar-card">
+        <div class="mini-calendar-card" style="margin-top: 8px;">
           <div class="mini-cal-header">
-            <span>SUN</span>
-            <span>NOVEMBER</span>
+            <span>WED</span>
+            <span>DECEMBER</span>
             <span>2026</span>
           </div>
           <div class="mini-cal-number-box">
             <div class="mini-cal-day-num" id="rollingDate">--</div>
           </div>
-          <div class="mini-cal-footer">SUNDAY</div>
+          <div class="mini-cal-footer">WEDNESDAY</div>
           <div class="mini-cal-time">7:00 PM</div>
         </div>
 
@@ -1394,7 +1433,7 @@
         <div class="line right"></div>
       </div>
 
-      <!-- القسم 4: برنامج الحفل -->
+      <!-- القسم 4: برنامج الحفل (أرقام بارزة وغامقة) -->
       <section class="section-card" id="timelineSection">
         <div class="section-clean-title">برنامج الحفل</div>
 
@@ -1471,7 +1510,7 @@
         <div class="line right"></div>
       </div>
 
-      <!-- القسم 6: الختام مع القلب ♡ وتصغير تاريخ الختام -->
+      <!-- القسم 6: الختام مع القلب والتاريخ المصغر -->
       <section class="section-card closing-card-lux">
         <div class="closing-text-wrap">
           <span>أهلاً بكم في ليلتنا، وبكم تحلو وتكتمل مسراتنا</span>
@@ -1481,7 +1520,7 @@
         <div class="couple-names-closing">
           راكان <span>&</span> لين
         </div>
-        <div class="wedding-date-closing">22.11.2026</div>
+        <div class="wedding-date-closing">02.12.2026</div>
 
         <div class="creator-credit">
           <a href="https://instagram.com/lumea_.digital" target="_blank" class="creator-link">
@@ -1493,14 +1532,14 @@
 
     </main>
 
-    <!-- شريط الملاحة السفلي (ظاهر وثابت طبيعياً) -->
+    <!-- شريط الملاحة السفلي -->
     <nav class="glass-bottom-bar">
       <div class="bar-item" onclick="openRSVP()">
         <i class="fa-regular fa-circle-check"></i>
         <span>تأكيد الحضور</span>
       </div>
 
-      <a href="https://maps.app.goo.gl/9yX3Vj2QxT17m9Jm6" target="_blank" class="bar-item">
+      <a href="https://maps.app.goo.gl/HUAG8hT1xmqAZkW99?g_st=ic" target="_blank" class="bar-item">
         <i class="fa-solid fa-location-dot"></i>
         <span>الموقع</span>
       </a>
@@ -1644,21 +1683,19 @@
       hasRolled = true;
 
       const dateElem = document.getElementById('rollingDate');
-      const target = 22;
-      let current = 1;
-      const duration = 1200;
-      const interval = duration / target;
+      const target = 2;
+      let current = 0;
 
       const timer = setInterval(() => {
         current++;
         dateElem.textContent = current < 10 ? '0' + current : current;
         if (current >= target) {
           clearInterval(timer);
-          dateElem.textContent = '22';
+          dateElem.textContent = '02';
           dateElem.style.transform = 'scale(1.1)';
           setTimeout(() => { dateElem.style.transform = 'scale(1)'; }, 200);
         }
-      }, interval);
+      }, 250);
     }
 
     function openRSVP() {
@@ -1848,7 +1885,7 @@
     }
     renderShimmer();
 
-    const weddingDate = new Date('2026-11-22T19:00:00+03:00').getTime();
+    const weddingDate = new Date('2026-12-02T19:00:00+03:00').getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -1872,7 +1909,7 @@
     updateCountdown();
 
     function addToCalendar() {
-      const icsData = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:حفل زفاف راكان & لين\nLOCATION:قاعات النعمان للاحتفالات - عمان شارع الأردن\nDTSTART:20261122T160000Z\nDTEND:20261122T210000Z\nDESCRIPTION:حفل زفاف راكان ولين\nEND:VEVENT\nEND:VCALENDAR`;
+      const icsData = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:حفل زفاف راكان & لين\nLOCATION:قاعات النعمان للاحتفالات - عمان شارع الأردن\nDTSTART:20261202T160000Z\nDTEND:20261202T210000Z\nDESCRIPTION:حفل زفاف راكان ولين\nEND:VCALENDAR`;
       const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
